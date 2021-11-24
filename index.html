@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>四則演算</title>
+		<style>
+			/*CSSのエリア*/
+			#input1{
+				width:150px;
+				padding:3px;
+				font-size:16px;
+				border:1px solid gray;
+				text-align:center;
+			}
+			#input2{
+				width:150px;
+				padding:3px;
+				font-size:16px;
+				border:1px solid gray;
+				text-align:center;
+			}
+			button{
+				padding:3px;
+				font-size:16px;
+			}
+			#box1{
+				width:200px;
+				padding:3px;
+				font-size:16px;
+				border:3px solid black;
+				text-align:center;
+				background-color:beige;
+			}
+			#box3{
+				width:500px;
+				padding:3px;
+				font-size:16px;
+				border:1px dotted gray;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- コンテンツのエリア -->
+		<img src="Schloss_Neushvanstein.jpg" alt="ノイシュバンシュタイン城" width="320" height="200">
+		<p>
+			<input type="text" placeholder="数字を入力" required id="input1">
+			<input type="text" placeholder="数字を入力" required id="input2">
+		</p>
+		<p>
+			<button onclick="btn1();">足し算</button>
+			<button onclick="btn2();">引き算</button>
+			<button onclick="btn3();">掛け算</button>
+			<button onclick="btn4();">割り算</button>
+		</p>
+		<p id="box1">結果</p>
+		<p id="box2"></p>
+		<p id="box3">
+			特に意味はありませんが、綺麗なのでノイシュバンシュタイン城の画像を貼っています。
+			2つの枠にそれぞれ数字を入れ、下の4つのボタンうちのいずれかを押してください。
+			結果の値と、その値がプラスかマイナスか0かを表示します。
+		</p>
+		<script>
+			//JavaScriptのエリア
+			function btn1(){
+				var input1 = document.getElementById("input1");
+				var input2 = document.getElementById("input2");
+				var box1 = document.getElementById("box1");
+				var result= parseFloat(input1.value) + parseFloat(input2.value);
+				box1.style.color = "red";
+				box1.innerHTML = result;
+				if(result>0){
+					box2.innerHTML = "プラスです";
+				}else if(result<0){
+					box2.innerHTML = "マイナスです";
+				}else{
+					box2.innerHTML = "0です";
+				}
+			}
+
+			function btn2(){
+				var input1 = document.getElementById("input1");
+				var input2 = document.getElementById("input2");
+				var box1 = document.getElementById("box1");
+				var result= parseFloat(input1.value) - parseFloat(input2.value);
+				box1.style.color = "red";
+				box1.innerHTML = result;
+				if(result>0){
+					box2.innerHTML = "プラスです";
+				}else if(result<0){
+					box2.innerHTML = "マイナスです";
+				}else{
+					box2.innerHTML = "0です";
+				}
+			}
+
+			function btn3(){
+				var input1 = document.getElementById("input1");
+				var input2 = document.getElementById("input2");
+				var box1 = document.getElementById("box1");
+				var result= parseFloat(input1.value) * parseFloat(input2.value);
+				box1.style.color = "red";
+				box1.innerHTML = result;
+				if(result>0){
+					box2.innerHTML = "プラスです";
+				}else if(result<0){
+					box2.innerHTML = "マイナスです";
+				}else{
+					box2.innerHTML = "0です";
+				}
+			}
+
+			function btn4(){
+				var input1 = document.getElementById("input1");
+				var input2 = document.getElementById("input2");
+				var box1 = document.getElementById("box1");
+				var result= parseFloat(input1.value) / parseFloat(input2.value);
+				box1.style.color = "red";
+				box1.innerHTML = result;
+				if(result>0){
+					box2.innerHTML = "プラスです";
+				}else if(result<0){
+					box2.innerHTML = "マイナスです";
+				}else{
+					box2.innerHTML = "0です";
+				}
+			}
+		</script>
+	</body>
+</html>
